@@ -20,8 +20,8 @@ public class Video {
 
     private String url;
 
-    @PostUpdate
-    public void onPostUpdate() {
+    @PostPersist
+    public void onPostPersist() {
         StreamFile streamFile = new StreamFile(this);
         streamFile.publishAfterCommit();
     }

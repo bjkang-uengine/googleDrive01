@@ -22,8 +22,8 @@ public class Index {
 
     private String keyword;
 
-    @PostUpdate
-    public void onPostUpdate() {
+    @PostPersist
+    public void onPostPersist() {
         Indexed indexed = new Indexed(this);
         indexed.publishAfterCommit();
     }

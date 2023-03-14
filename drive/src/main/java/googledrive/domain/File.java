@@ -21,10 +21,7 @@ public class File {
     private Integer size;
 
     @PostPersist
-    public void onPostPersist() {}
-
-    @PostUpdate
-    public void onPostUpdate() {
+    public void onPostPersist() {
         FileUploded fileUploded = new FileUploded(this);
         fileUploded.publishAfterCommit();
     }
